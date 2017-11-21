@@ -71,12 +71,12 @@ function getYear(){
 	return yearList;
 }
 
-function dateValidation(dd, mmmm, yyyy, agefield, pastdatemsg, missingmsg ){
+function dateValidation(dob, agefield, pastdatemsg, missingmsg ){
 	var isvalid = true;
-	var date= this.getField(dd);
-	var mnth= this.getField(mmmm);
-	var year= this.getField(yyyy);
-	var gvnDate = util.scand("dd/mm/yyyy", date.valueAsString/mnth.valueAsString/year.valueAsString);
+	var date= this.getField(dob);
+	//var mnth= this.getField(mmmm);
+	//var year= this.getField(yyyy);
+	var gvnDate = util.scand("dd/mm/yyyy", date.valueAsString);
 	var givenDate = util.printd("dd/mm/yyyy",gvnDate);
 	var givenDateyyyy = util.printd("yyyy", gvnDate);
 	var currentDateyyyy = util.printd("yyyy",new Date());
@@ -90,20 +90,20 @@ function dateValidation(dd, mmmm, yyyy, agefield, pastdatemsg, missingmsg ){
 	}else {
 		isvalid = false;
 		date.borderColor = color.red;
-		mnth.borderColor = color.red;
-		year.borderColor = color.red;
+		//mnth.borderColor = color.red;
+		//year.borderColor = color.red;
 		return isvalid;
 	}else {
 		isvalid = false;
 		date.borderColor = color.red;
-		mnth.borderColor = color.red;
-		year.borderColor = color.red;
+		//mnth.borderColor = color.red;
+		///year.borderColor = color.red;
 		return isvalid;
 	}
 	isvalid = true;
 	date.borderColor = color.black;
-	mnth.borderColor = color.black;
-	year.borderColor = color.black;
+	//mnth.borderColor = color.black;
+	//year.borderColor = color.black;
 	return isvalid;
 }
 	return isvalid;	
